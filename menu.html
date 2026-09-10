@@ -1,1 +1,20 @@
-
+{% extends 'base.html' %}
+{% block title %}Little Lemon — Menu{% endblock %}
+{% block content %}
+    <section>
+        <h2>Our Menu</h2>
+        {% if menu_items %}
+            <ul class="menu-list">
+                {% for item in menu_items %}
+                    <li>
+                        <span class="menu-item-title">{{ item.title }}</span>
+                        <span class="menu-item-price">${{ item.price }}</span>
+                        {% if item.featured %}<span class="badge">Featured</span>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>The menu is being updated — please check back soon.</p>
+        {% endif %}
+    </section>
+{% endblock %}
