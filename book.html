@@ -1,1 +1,12 @@
-
+{% extends 'base.html' %}
+{% block title %}Little Lemon — Book a Table{% endblock %}
+{% block content %}
+    <section>
+        <h2>Book a Table</h2>
+        <p>
+            Reservations are made through the Booking API
+            (<code>/api/bookings/</code>). Sign in, then submit a POST
+            request with your name, guest count, date and time.
+        </p>
+    </section>
+{% endblock %}
