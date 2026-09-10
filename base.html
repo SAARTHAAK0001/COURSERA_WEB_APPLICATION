@@ -1,1 +1,25 @@
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Little Lemon{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Little Lemon</h1>
+        <nav>
+            <a href="{% url 'restaurant:index' %}">Home</a>
+            <a href="{% url 'restaurant:menu-page' %}">Menu</a>
+            <a href="{% url 'restaurant:booking-page' %}">Book a Table</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; Little Lemon Restaurant</p>
+    </footer>
+</body>
+</html>
